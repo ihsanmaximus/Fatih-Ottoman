@@ -1,0 +1,208 @@
+/* ===== Variables ===== */
+:root{--ivory:#F5EBDD;--cream:#EDE0CD;--gold:#D8A64E;--gold-l:#EAC77F;--burg:#360A07;--brown:#4A2115;--ink:#20150F;--light:#F7F0E5;--serif:'Cormorant Garamond',Georgia,serif;--sans:'Jost',system-ui,sans-serif;--w:1240px;--pad:clamp(20px,4vw,56px)}
+*{box-sizing:border-box;margin:0}html{scroll-behavior:smooth;scroll-padding-top:80px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+body{font:400 16px/1.6 var(--sans);color:var(--ink);background:var(--ivory);overflow-x:hidden}
+.wrap{max-width:var(--w);margin:auto;padding-inline:var(--pad)}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.1}
+a{color:inherit;text-decoration:none}:focus-visible{outline:2px solid var(--gold-l);outline-offset:3px}
+.sr{position:absolute;left:-9999px}
+.eyebrow{font-size:12px;letter-spacing:.18em;color:var(--gold-l);margin-bottom:18px}.eyebrow.gold{color:#B47B33;font-family:var(--serif);font-size:20px;letter-spacing:.04em}
+.lead{max-width:34ch;font-size:18px;color:var(--light)}
+.btn{display:inline-flex;gap:10px;align-items:center;background:linear-gradient(#E6BB72,#D8A64E);color:var(--burg);border:0;border-radius:8px;padding:13px 24px;font:500 14px var(--sans);cursor:pointer;transition:filter .2s,transform .2s}
+.btn:hover{filter:brightness(1.08)}.btn:active{transform:translateY(1px)}
+/* ===== Image slots: url first, gradient fallback shows if file missing ===== */
+.img-hero{background:linear-gradient(90deg,rgba(18,13,8,.88),rgba(18,13,8,.6) 30%,rgba(18,13,8,.1) 62%,transparent),url(../assets/images/hero/istanbul-restaurant-hero.webp) 70% center/cover,linear-gradient(160deg,#1c1410,#7a3a16 55%,#e59a4b)}
+.img-about{background:url(../assets/images/about/ottoman-restaurant-interior.webp) center/cover,linear-gradient(120deg,#8a4a1e,#d98b3d 60%,#5a2a14)}
+.img-adana{--i:url(../assets/images/menu/adana-kebab.webp);--f:linear-gradient(135deg,#5a2312,#c4561f)}
+.img-pide{--i:url(../assets/images/menu/turkish-pide.webp);--f:linear-gradient(135deg,#6b3b17,#d28a35)}
+.img-tandir{--i:url(../assets/images/menu/kuzu-tandir.webp);--f:linear-gradient(135deg,#40160d,#9b3a1d)}
+.img-baklava{--i:url(../assets/images/menu/baklava.webp);--f:linear-gradient(135deg,#7a5a18,#d8b04e)}
+.img-atmo{background:url(../assets/images/atmosphere/turkish-tea-service.webp) center/cover,linear-gradient(120deg,#2a140c,#9a5a1f 70%,#d9a05a)}
+.img-g1{--i:url(../assets/images/gallery/restaurant-interior.webp);--f:linear-gradient(#4a2a14,#c47a30)}
+.img-g2{--i:url(../assets/images/gallery/bosphorus-sunset.webp);--f:linear-gradient(#3a5a8a,#e08a45)}
+.img-g3{--i:url(../assets/images/gallery/turkish-tea.webp);--f:linear-gradient(#2a140c,#b5651f)}
+.img-g4{--i:url(../assets/images/gallery/ottoman-dining-table.webp);--f:linear-gradient(#5a1d12,#d8883a)}
+.img-resv{background:linear-gradient(90deg,rgba(25,10,6,.88),rgba(25,10,6,.55) 45%,rgba(25,10,6,.15)),url(../assets/images/reservation/luxury-dining-table.webp) center/cover,linear-gradient(120deg,#2a0f08,#8a4a1a)}
+.card,.gi,.lb-img{background:linear-gradient(0deg,rgba(15,8,4,.92),transparent 55%),var(--i),var(--f);background-size:cover;background-position:center}
+.gi,.lb-img{background:var(--i),var(--f);background-size:cover;background-position:center}
+/* ===== Header ===== */
+.hdr{position:absolute;inset:0 0 auto;z-index:10;padding-top:18px}.hdr-in{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.logo{font:600 30px/1 var(--serif);letter-spacing:.14em;color:var(--gold-l);display:flex;flex-direction:column;align-items:center}.logo small{font:400 7px var(--sans);letter-spacing:.3em;text-transform:uppercase}
+nav{display:flex;align-items:center;gap:30px;color:var(--light);font-size:14px}nav>a{padding:6px 0;border-bottom:1px solid transparent}nav>a:hover,nav>a.active{color:var(--gold-l);border-color:var(--gold)}
+.lang{background:rgba(70,110,150,.45);color:#fff;border:0;border-radius:8px;padding:9px 12px;font:inherit}.lang option{color:#000}
+.burger{display:none;background:none;border:0;padding:10px;cursor:pointer}.burger span{display:block;width:26px;height:2px;background:var(--gold-l);margin:5px 0}
+/* ===== Hero ===== */
+.hero{min-height:min(100vh,780px);display:flex;align-items:center;padding:120px 0 70px;color:var(--light)}
+.hero h1{font-size:clamp(48px,6.4vw,84px);margin-bottom:24px}.hero em{font-style:normal;color:var(--gold)}.hero .lead{margin-bottom:34px;font-size:19px}
+.row{display:flex;gap:24px;align-items:center;flex-wrap:wrap}.play{background:none;border:0;color:var(--light);display:flex;align-items:center;gap:12px;font:inherit;font-size:14px;cursor:pointer}.play span{display:grid;place-items:center;width:42px;height:42px;border:1px solid var(--gold);border-radius:50%;color:var(--gold-l);font-size:12px}
+/* ===== Features ===== */
+.features{background:var(--ivory);padding:34px 0}.features ul{list-style:none;display:grid;grid-template-columns:repeat(4,1fr)}
+.features li{text-align:center;padding:6px 18px;border-left:1px solid #cfae7a}.features li:first-child{border:0}
+.features svg{width:34px;height:34px;fill:none;stroke:#B47B33;stroke-width:1.3;margin-bottom:6px}.features h3{font-size:20px}.features p{font-size:12.5px;color:#6b5646}
+/* ===== About ===== */
+.about{position:relative;min-height:540px;display:flex;align-items:center;background:var(--ivory);overflow:hidden}
+.about-img{position:absolute;inset:0 0 0 38%;-webkit-mask-image:linear-gradient(90deg,transparent,#000 35%);mask-image:linear-gradient(90deg,transparent,#000 35%)}
+.about-txt{position:relative;max-width:470px}.about h2{font-size:clamp(34px,4vw,48px);margin-bottom:20px}.about-txt>p:not(.eyebrow){margin-bottom:28px;font-size:15px}
+.stats{display:flex;margin-top:46px}.stats div{padding:0 26px;border-left:1px solid #cfae7a}.stats div:first-child{padding-left:0;border:0}.stats dt{font:600 38px/1 var(--serif)}.stats dd{font-size:12px;color:#6b5646;margin:0}
+/* ===== Menu ===== */
+.menu{background:radial-gradient(ellipse at 70% 0,#4a2415,#1b0e08 70%);color:var(--light);padding:56px 0 64px}
+.menu-head{display:flex;justify-content:space-between;align-items:flex-start;gap:24px;margin-bottom:36px}.menu-head h2{font-size:clamp(32px,4vw,44px);margin-bottom:12px}.menu .lead{font-size:15px;max-width:48ch;color:#d8c9b6}.link{color:var(--gold-l);font-size:14px;padding-top:30px;white-space:nowrap}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.card{position:relative;aspect-ratio:3/3.9;border-radius:12px;border:1px solid rgba(216,166,78,.25);display:flex;align-items:flex-end;justify-content:space-between;gap:10px;padding:18px;cursor:pointer;overflow:hidden}
+.card h3{font-size:22px}.card b{color:var(--gold-l);font-weight:500}.card p{font-size:12px;color:#d8c9b6;line-height:1.4}.card b{display:block}
+.go{flex:none;width:34px;height:34px;border-radius:50%;border:0;background:var(--gold);color:var(--burg);cursor:pointer}.card:hover{border-color:var(--gold)}
+/* ===== Atmosphere ===== */
+.atmo{position:relative;min-height:440px;display:flex;align-items:center;justify-content:flex-end;background:var(--ivory);overflow:hidden}
+.atmo-img{position:absolute;inset:0 42% 0 0;-webkit-mask-image:linear-gradient(270deg,transparent,#000 35%);mask-image:linear-gradient(270deg,transparent,#000 35%)}
+.atmo .wrap{position:relative;display:flex;justify-content:flex-end}.atmo-txt{width:min(440px,100%)}.atmo h2{font-size:clamp(32px,4vw,44px);margin-bottom:18px}.atmo-txt>p:not(.eyebrow){margin-bottom:26px;font-size:15px}
+/* ===== Gallery ===== */
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:3px;background:var(--ivory)}.gi{aspect-ratio:1.4;border:0;cursor:zoom-in;filter:saturate(1.05);transition:filter .3s}.gi:hover{filter:brightness(1.12)}
+/* ===== Testimonials ===== */
+.testi{padding:44px 0;background:var(--ivory)}.testi-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px}.testi h2{font-size:30px;margin-inline:auto}
+.arr{width:34px;height:34px;border-radius:50%;border:1px solid var(--gold);background:none;color:#8a5a22;cursor:pointer;margin-left:8px}.arr.on{background:var(--brown);color:var(--gold-l)}
+.track{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}.track::-webkit-scrollbar{display:none}
+blockquote{flex:0 0 calc((100% - 36px)/3);scroll-snap-align:start;background:#fbf5ea;border:1px solid #e3d2b6;border-radius:10px;padding:22px}
+.stars{color:var(--gold);letter-spacing:3px}blockquote p{margin:10px 0 16px;font-size:14px}blockquote footer{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:500;flex-wrap:wrap}blockquote i{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--brown);color:var(--gold-l);font:normal 15px var(--serif)}blockquote small{width:100%;margin-left:44px;margin-top:-12px;color:#6b5646;font-weight:400}
+.note{font-size:11px;color:#8a7560;margin-top:12px}
+/* ===== Reservation ===== */
+.resv{padding:70px 0;color:var(--light)}.resv h2{font-size:clamp(34px,4.4vw,48px);margin-bottom:12px}.resv .lead{margin-bottom:26px;font-size:16px;max-width:none}
+/* ===== Footer ===== */
+.foot{background:linear-gradient(#3a0d0a,#2a0705);color:#e6d6c0;padding-top:48px;position:relative;font-size:13px}
+.fgrid{display:grid;grid-template-columns:1.3fr .8fr 1.3fr 1.2fr;gap:36px;padding-bottom:96px;position:relative;z-index:1}
+.fgrid h4{font:600 15px var(--sans);color:var(--gold-l);margin-bottom:14px}.fgrid a,.fgrid address a,.fgrid address span{display:block;margin-bottom:8px;font-style:normal}.fgrid a:hover{color:var(--gold-l)}.fgrid p{margin:12px 0}.fgrid small{opacity:.6}
+.soc{display:flex;gap:10px}.soc a{width:32px;height:32px;border:1px solid rgba(216,166,78,.5);border-radius:50%;display:grid!important;place-items:center;font-size:11px;margin:0!important}
+#news{display:flex;gap:8px}#news input{flex:1;min-width:0;background:rgba(255,255,255,.08);border:1px solid rgba(216,166,78,.3);border-radius:8px;padding:10px 12px;color:#fff;font:inherit}
+.sky{position:absolute;inset:auto 0 44px;height:110px;background:linear-gradient(0deg,#4a1710,transparent);opacity:.5;clip-path:polygon(0 100%,0 70%,6% 45%,9% 70%,14% 30%,17% 70%,24% 55%,30% 20%,33% 70%,42% 60%,50% 40%,58% 65%,66% 25%,70% 70%,78% 50%,85% 30%,90% 65%,100% 45%,100% 100%)}
+.copy{display:flex;justify-content:space-between;gap:16px;align-items:center;border-top:1px solid rgba(216,166,78,.2);padding-block:14px;position:relative;z-index:1;font-size:12px}.copy a{margin-right:14px}
+.top{width:34px;height:34px;border-radius:50%;border:1px solid var(--gold);background:none;color:var(--gold-l);cursor:pointer}.top.fixed{position:fixed;right:18px;bottom:18px;z-index:20;background:var(--brown)}
+/* ===== Dialogs ===== */
+dialog{border:0;border-radius:14px;padding:30px;background:var(--ivory);color:var(--ink);width:min(520px,92vw);margin:auto;position:fixed}dialog::backdrop{background:rgba(10,5,3,.75)}
+dialog h3{font-size:30px}dialog b{color:#B47B33;display:block;margin:6px 0 10px}dialog p{margin-bottom:18px}.x{position:absolute;right:12px;top:8px;border:0;background:none;font-size:28px;cursor:pointer;color:inherit}
+#rf{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}#rf label{display:grid;gap:4px;font-size:13px}.full{grid-column:1/-1}
+#rf input,#rf select,#rf textarea{padding:10px;border:1px solid #cdb995;border-radius:8px;font:inherit;background:#fffaf0}#rf [aria-invalid=true]{border-color:#b3261e}#rf-s.err{color:#b3261e}#rf-s.ok{color:#2e6b34}
+#lb{width:min(900px,94vw);background:#000;padding:0}.lb-img{aspect-ratio:1.5}#lb .arr{position:absolute;top:50%;color:#fff;background:rgba(0,0,0,.5)}.arr.l{left:10px}.arr.r{right:10px}
+/* ===== Responsive ===== */
+@media(max-width:1024px){.cards{grid-template-columns:repeat(2,1fr)}.fgrid{grid-template-columns:1fr 1fr}blockquote{flex-basis:calc((100% - 18px)/2)}.about-img{inset:0 0 0 30%}}
+@media(max-width:860px){
+.burger{display:block}nav{display:none;position:absolute;top:100%;left:var(--pad);right:var(--pad);flex-direction:column;align-items:flex-start;gap:14px;background:rgba(27,14,8,.96);padding:22px;border-radius:12px}nav.open{display:flex}
+.hero{min-height:620px;padding-top:110px;background-position:78% center}.img-hero{background:linear-gradient(180deg,rgba(18,13,8,.35),rgba(18,13,8,.85)),url(../assets/images/hero/istanbul-restaurant-hero.webp) 75% center/cover,linear-gradient(160deg,#1c1410,#7a3a16 55%,#e59a4b)}
+.features ul{grid-template-columns:1fr 1fr;row-gap:22px}.features li:nth-child(3){border-left:0}
+.about,.atmo{flex-direction:column;align-items:stretch;min-height:0}.about-img,.atmo-img{position:relative;inset:auto;height:300px;mask-image:none;-webkit-mask-image:none}.about-img{order:2}.about .wrap,.atmo .wrap{padding-block:36px}.atmo .wrap{justify-content:flex-start}.atmo-img{order:2}
+.menu-head{flex-direction:column}.link{padding:0}.gallery{grid-template-columns:1fr 1fr}.testi-head{flex-direction:column;gap:12px}.copy{flex-direction:column;align-items:flex-start}}
+@media(max-width:560px){.cards{grid-template-columns:1fr}.card{aspect-ratio:4/3.4}.fgrid{grid-template-columns:1fr}blockquote{flex-basis:88%}#rf{grid-template-columns:1fr}.stats div{padding:0 14px}.stats dt{font-size:30px}}
+
+
+/* ===== MOBILE NAV PATCH ===== */
+@media (max-width: 860px) {
+
+  .hdr {
+    position: absolute;
+    z-index: 100;
+  }
+
+  .hdr-in {
+    position: relative;
+  }
+
+  .hdr .burger {
+    display: block;
+    position: relative;
+    z-index: 102;
+  }
+
+  .hdr nav {
+    display: none;
+    position: absolute;
+    z-index: 101;
+
+    top: calc(100% + 12px);
+    left: var(--pad);
+    right: var(--pad);
+
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+
+    background: #1b0e08;
+    color: #fff;
+
+    padding: 28px 24px;
+    border: 1px solid rgba(216,166,78,.3);
+    border-radius: 18px;
+
+    box-shadow: 0 15px 40px rgba(0,0,0,.5);
+  }
+
+  .hdr nav.open {
+    display: flex;
+  }
+
+  .hdr nav a {
+    display: block;
+    width: 100%;
+    color: #fff;
+  }
+
+  .hdr nav a.active {
+    color: #e8bd70;
+  }
+
+  .hdr nav .btn {
+    width: 100%;
+  }
+}
+
+
+/* ===== FATIH NAV GLASS THEME ===== */
+@media (max-width: 860px) {
+
+  .hdr nav.open {
+    background: rgba(27, 14, 8, 0.82) !important;
+
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+
+    border: 1px solid rgba(216, 166, 78, 0.28);
+
+    box-shadow:
+      0 15px 40px rgba(0, 0, 0, 0.35),
+      inset 0 1px 0 rgba(234, 199, 127, 0.08);
+  }
+
+  .hdr nav.open a {
+    color: #F5EBDD;
+  }
+
+  .hdr nav.open a.active {
+    color: #EAC77F;
+    border-color: #D8A64E;
+  }
+
+  .hdr nav.open .btn {
+    color: #360A07;
+  }
+}
+
+
+
+/* ===== FATIH HEADER GLASS STRIP ===== */
+.hdr {
+    background: rgba(27, 14, 8, 0.32);
+
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+
+    border-bottom: 1px solid rgba(216, 166, 78, 0.12);
+
+    transition: background 0.3s ease;
+}
+
+
+
+/* ===== ABOUT TEXT LEFT SHIFT ===== */
+@media (min-width: 861px) {
+  .about .about-txt {
+    transform: translateX(-120px);
+  }
+}
